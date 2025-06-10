@@ -1,7 +1,7 @@
 var overrideList = {
 	class: [],
 	block: {},
-}
+};
 
 global.override = {
 	class: (blockClass, def, func) => {
@@ -11,7 +11,7 @@ global.override = {
 		if (overrideList.block[blockName]) overrideList.block[blockName].push(def);
 		else overrideList.block[blockName] = [def];
 	}
-}
+};
 
 Events.on(ContentInitEvent, () => {
 	overrideList.class.forEach(blockType => {
@@ -33,6 +33,6 @@ Events.on(ContentInitEvent, () => {
 	overrideList = null;
 });
 
-require('yr2-logic-debugger/proc');
-require('yr2-logic-debugger/mem');
-require('yr2-logic-debugger/msg')
+require('yr2-logic-debugger-en/proc');
+require('yr2-logic-debugger-en/mem');
+require('yr2-logic-debugger-en/msg')
