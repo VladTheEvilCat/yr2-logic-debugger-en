@@ -125,7 +125,7 @@ global.override.class(LogicBlock, {
 								if (this.yr2Lists.step.breakPoint.indexOf(this.yr2Lists.step.counter) == -1)
 									this.yr2Lists.step.breakPoint.push(this.yr2Lists.step.counter);
 								else this.yr2Lists.step.breakPoint.splice(this.yr2Lists.step.breakPoint.indexOf(this.yr2Lists.step.counter), 1);
-							}).size(40).tooltip('+ Breakpoint');
+							}).size(40).tooltip('Add Breakpoint');
 							this.yr2Lists.step.field = ttt.field('' + this.yr2Lists.step.counter, v => {
 								if (this.yr2Lists.step.counter != v - '') {
 									this.yr2Lists.step.counter = v - '';
@@ -314,7 +314,7 @@ global.override.class(LogicBlock, {
 							}).size(40).tooltip('Export');
 							ttt.check('', this.yr2Setting.vars.link, c => {
 								this.yr2Setting.vars.link = c;
-							}).size(40).tooltip('Position Indicator?');
+							}).size(40).tooltip('Show Linked Blocks');
 						}).top().height(50);
 						tt.row();
 						const varLength = () => {
@@ -541,14 +541,14 @@ global.override.class(LogicBlock, {
 								this.yr2Setting.editor.add = false;
 								this.yr2Lists.editor.codeAdd = '';
 								this.yr2TableBuild();
-							}).size(40).tooltip('Enter?');
+							}).size(40).tooltip('Submit Changes');
 							ttt.field(this.yr2Lists.editor.codeAddPos, v => {
 								this.yr2Lists.editor.codeAddPos = v;
 							}).width(75);
 							ttt.button(Icon.add, Styles.cleari, () => {
 								this.yr2Setting.editor.add = true;
 								this.yr2TableBuild();
-							}).size(40).tooltip('Insert');
+							}).size(40).tooltip('Insert New Line At');
 							ttt.button(Icon.download, Styles.cleari, () => {
 								if (this.yr2Setting.editor.replace) {
 									this.updateCode(Core.app.getClipboardText().replace(/\r/g, ''));
