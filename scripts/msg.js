@@ -5,12 +5,12 @@ global.override.class(MessageBlock, {
         const editTable = new Table(null, t => {
             t.button(Icon.copy, Styles.cleari, () => {
                 Core.app.setClipboardText(this.message.toString());
-            }).size(40);
+            }).size(40).tooltip('Copy');
             if (table.cells.size > 0) {
                 t.add(table.cells.get(0).get()).minWidth(40).height(40);
                 t.button(Icon.download, Styles.cleari, () => {
                     this.configure(Core.app.getClipboardText().replace(/\r/g, ''));
-                }).size(40);
+                }).size(40).tooltip('Paste');
             }
         });
 		table.clear();
